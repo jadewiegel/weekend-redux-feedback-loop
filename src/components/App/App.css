@@ -18,6 +18,10 @@
   font-size: large;
 }
 
+.nextButton {
+  text-align: center;
+}
+
 h4 {
   font-style: italic;
 }

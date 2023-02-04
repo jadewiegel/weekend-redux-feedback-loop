@@ -2,8 +2,15 @@ import React, {useState} from 'react';
 import './understanding.css';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
+import Support from '../Support/support';
 
 function UnderstandingFeels(){
+
+    // const history = useHistory();
+
+    // function handleClick() {
+    //     history.push('/support');
+    // }
 
     const [addUnderstanding, setUnderstandingFeeling] = useState(0);
 
@@ -28,6 +35,11 @@ function UnderstandingFeels(){
                     />
                 </form>
             
+            </div>
+            
+            <div>
+                <Route path='/support' component={Support} />
+
             </div>
     </Router>
     );

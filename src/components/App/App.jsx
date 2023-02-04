@@ -5,8 +5,15 @@ import './App.css';
 
 //components
 import TodayFeels from '../TodayFeels/todayFeels';
+import UnderstandingFeels from '../Understanding/understanding';
+import Support from '../Support/support';
 
 function App() {
+
+  // let history = useHistory();
+  // function handleClick (){
+  //   history.push('/understanding')
+  // }
 
   return (
     <Router>
@@ -16,14 +23,16 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
       </div>
-      <Route path='/' component={TodayFeels} />
-      {/* <TodayFeels /> */}
 
-        {/* <UnderstandingFeels /> */}
+      <Route exact path='/' component={TodayFeels} />
+      <Route path='/understanding' component={UnderstandingFeels} /> 
+      <Route path='/support' component={Support} />
+     
 
       <br />
       <div className='nextButton'>
-        <button><Link to='/understanding'>Next</Link></button>
+      <button ><Link to='/understanding'>Next</Link></button>
+      {/* <button onClick={handleClick}>Next</button> */}
       </div>
     </Router>
   );

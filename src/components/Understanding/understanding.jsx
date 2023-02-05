@@ -2,15 +2,13 @@ import React, {useState} from 'react';
 import './understanding.css';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
-import Support from '../Support/support';
-
 function UnderstandingFeels(){
 
-    // const history = useHistory();
+    const history = useHistory();
 
-    // function handleClick() {
-    //     history.push('/support');
-    // }
+    function handleClick() {
+        history.push('/support');
+    }
 
     const [addUnderstanding, setUnderstandingFeeling] = useState(0);
 
@@ -26,20 +24,20 @@ function UnderstandingFeels(){
 
                 <p>Understanding?</p>
 
-                <form onSubmit={understandingSubmit}>
                     <input type='text'
                     understandingFeels='understandingFeels'
                     placeholder='Enter a number 1-5'
                     value={addUnderstanding}
                     onChange={event => setUnderstandingFeeling(event.target.value)}
                     />
-                </form>
+                
+                <br />
+                <br />
             
             </div>
             
-            <div>
-                <Route path='/support' component={Support} />
-
+            <div className='nextButton'>
+                <button onClick={handleClick}>Next</button>
             </div>
     </Router>
     );

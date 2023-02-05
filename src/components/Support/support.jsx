@@ -8,6 +8,11 @@ function Support(){
 
     const [addSupport, setNewSupport] = useState(0);
 
+    const history = useHistory();
+
+    function handleClick() {
+        history.push('/comments');
+    }
     const supportSubmit = (event) => {
         event.preventDefault();
     }
@@ -20,21 +25,22 @@ function Support(){
 
             <p>Supported?</p>
 
-            <form onSubmit={supportSubmit}>
                 <input type='text'
                 supported='supported'
                 placeholder='Enter a number 1-5'
                 value={addSupport}
                 onChange={event => setNewSupport(event.target.value)}
                 />
-            </form>
+            
+            <br />
+            <br />
             
             </div>
 
-            <div>
-              {/* <Route path='/comments' component={Comments} /> */}
-
+            <div className='nextButton'>
+                <button onClick={handleClick}>Next</button>
             </div>
+
         </Router>
     );
 }

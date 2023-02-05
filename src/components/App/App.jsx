@@ -7,13 +7,10 @@ import './App.css';
 import TodayFeels from '../TodayFeels/todayFeels';
 import UnderstandingFeels from '../Understanding/understanding';
 import Support from '../Support/support';
+import Comments from '../Comments/comments';
+import Review from '../Review/review';
 
 function App() {
-
-  // let history = useHistory();
-  // function handleClick (){
-  //   history.push('/understanding')
-  // }
 
   return (
     <Router>
@@ -24,16 +21,14 @@ function App() {
         </header>
       </div>
 
+    
       <Route exact path='/' component={TodayFeels} />
       <Route path='/understanding' component={UnderstandingFeels} /> 
       <Route path='/support' component={Support} />
-     
-
+      <Route path='/comments' component={Comments} />
+      <Route path='/review' component={Review} />
       <br />
-      <div className='nextButton'>
-      <button ><Link to='/understanding'>Next</Link></button>
-      {/* <button onClick={handleClick}>Next</button> */}
-      </div>
+      
     </Router>
   );
 }

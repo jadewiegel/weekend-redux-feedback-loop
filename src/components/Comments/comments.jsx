@@ -1,16 +1,26 @@
 import React, {useState} from 'react';
 import './comments.css';
+import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
+
 function Comments(){
+
+    const comments = useSelector(store => store.feelingNum)
+    const dispatch = useDispatch();
+    const [addComments, setNewComments] = useState('');
+
 
     const history = useHistory();
 
     function handleClick() {
+        dispatch({
+            type: 'COMMENTS',
+            payload: addComments,
+        })
         history.push('/review');
     }
 
-    const [addComments, setNewComments] = useState('');
 
     return (
         <Router>

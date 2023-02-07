@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import './review.css';
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function Review(){
 
     const feelingNum = useSelector(store => store.feelingNum);
-    
+    const understandingNum = useSelector(store => store.understandingNum);
+    const supportNum = useSelector(store => store.supportNum);
+    const comments = useSelector(store => store.comments);
     
     // neccessary if using submit button
     const feedbackSubmit = (event) => {
@@ -19,7 +20,9 @@ function Review(){
                 <h2>Review Your Feedback</h2>
 
                 <p>Feelings: {feelingNum}</p>
-
+                <p>Understanding: {understandingNum}</p>
+                <p>Support: {supportNum}</p>
+                <p>Comments: {comments}</p>
                 </div>
 
             <div className='nextButton'>

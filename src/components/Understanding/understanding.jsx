@@ -1,19 +1,24 @@
 import React, {useState} from 'react';
 import './understanding.css';
+import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 function UnderstandingFeels(){
 
+    const understandingNum = useSelector(store => store.feelingNum)
+    const dispatch = useDispatch();
+    const [addUnderstanding, setUnderstandingFeeling] = useState('');
+
+
     const history = useHistory();
 
     function handleClick() {
+        //dispatch to the reducer here
+        dispatch({
+        type: 'UNDERSTANDING_NUM',
+        payload: addUnderstanding,
+    })
         history.push('/support');
-    }
-
-    const [addUnderstanding, setUnderstandingFeeling] = useState(0);
-
-    const understandingSubmit = (event) => {
-        event.preventDefault();
     }
 
     return (

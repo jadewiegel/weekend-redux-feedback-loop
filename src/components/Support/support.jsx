@@ -1,20 +1,24 @@
 import React, {useState} from 'react';
 import './support.css';
+import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 
 function Support(){
 
-
-    const [addSupport, setNewSupport] = useState(0);
+    const supportNum = useSelector(store => store.feelingNum)
+    const dispatch = useDispatch();
+    const [addSupport, setNewSupport] = useState('');
 
     const history = useHistory();
 
     function handleClick() {
+               //dispatch to the reducer here
+               dispatch({
+                type: 'SUPPORT_NUM',
+                payload: addSupport,
+            })
         history.push('/comments');
-    }
-    const supportSubmit = (event) => {
-        event.preventDefault();
     }
 
     return (

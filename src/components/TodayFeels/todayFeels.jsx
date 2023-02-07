@@ -8,7 +8,7 @@ function TodayFeels(){
 
     const feelingNum = useSelector(store => store.feelingNum)
     const dispatch = useDispatch();
-    const [addFeeling, setNewFeeling] = useState(0);
+    const [addFeeling, setNewFeeling] = useState('');
 
     let history = useHistory();
 

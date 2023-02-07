@@ -13,12 +13,17 @@ function Support(){
     const history = useHistory();
 
     function handleClick() {
+        //conditional if input entered is within valid parameters
+        if(addSupport > 5 || addSupport < 1){
+            alert('Enter a number 1-5')
+        } else {
                //dispatch to the reducer here
                dispatch({
                 type: 'SUPPORT_NUM',
                 payload: addSupport,
             })
         history.push('/comments');
+        }
     }
 
     return (

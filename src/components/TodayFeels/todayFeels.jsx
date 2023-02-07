@@ -13,12 +13,17 @@ function TodayFeels(){
     let history = useHistory();
 
     const handleClick = () => {
+        //conditional if input entered is within valid parameters
+        if(addFeeling > 5 || addFeeling < 1){
+            alert('Enter a number 1-5')
+        } else {
         //dispatch to the reducer here
         dispatch({
             type: 'FEELING_NUM',
             payload: addFeeling,
         })
         history.push('/understanding')
+        }
     }
 
     return (

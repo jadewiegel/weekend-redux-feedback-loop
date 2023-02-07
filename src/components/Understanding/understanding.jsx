@@ -13,12 +13,17 @@ function UnderstandingFeels(){
     const history = useHistory();
 
     function handleClick() {
+        //conditional if input entered is within valid parameters
+        if(addUnderstanding > 5 || addUnderstanding < 1){
+            alert('Enter a number 1-5')
+        } else {
         //dispatch to the reducer here
         dispatch({
         type: 'UNDERSTANDING_NUM',
         payload: addUnderstanding,
     })
         history.push('/support');
+        }
     }
 
     return (

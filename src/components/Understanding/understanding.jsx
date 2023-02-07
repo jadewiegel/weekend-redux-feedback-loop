@@ -18,11 +18,11 @@ function UnderstandingFeels(){
             alert('Enter a number 1-5')
         } else {
         //dispatch to the reducer here
-        dispatch({
-        type: 'UNDERSTANDING_NUM',
-        payload: addUnderstanding,
-    })
-        history.push('/support');
+            dispatch({
+            type: 'UNDERSTANDING_NUM',
+            payload: addUnderstanding,
+        })
+            history.push('/support');
         }
     }
 

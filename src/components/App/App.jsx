@@ -9,6 +9,7 @@ import UnderstandingFeels from '../Understanding/understanding';
 import Support from '../Support/support';
 import Comments from '../Comments/comments';
 import Review from '../Review/review';
+import Thanks from '../Thanks/thanks';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Route path='/support' component={Support} />
       <Route path='/comments' component={Comments} />
       <Route path='/review' component={Review} />
+      <Route path='/thanks' component={Thanks} />
       <br />
       
     </Router>
